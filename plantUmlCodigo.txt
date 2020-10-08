@@ -1,0 +1,18 @@
+@startuml
+component ProducerParcial
+component deleteDataDuplicate
+component deleteClientNull
+component mapSalesFaileds
+component deleteSalesEqualCero
+component mapSalesSuccessful
+component salesDepuradas
+component salesFallidas
+
+ProducerParcial -> deleteDataDuplicate
+deleteDataDuplicate -> deleteClientNull
+deleteDataDuplicate --> mapSalesFaileds
+mapSalesFaileds -> salesFallidas
+deleteClientNull -> deleteSalesEqualCero
+deleteSalesEqualCero -> mapSalesSuccessful
+mapSalesSuccessful -> salesDepuradas
+@enduml
